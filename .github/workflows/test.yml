@@ -40,4 +40,4 @@ jobs:
       run: |
         python main.py
       env:
-        URLS: ${{ secrets.URLS }
+        URLS: ${{ secrets.URLS }}
