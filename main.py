@@ -29,7 +29,7 @@ def main():
         #exit(-1)
     else:
         logging.info('Not available')
-        #exit(-1)
+        exit(-1)
 
 
 if __name__ == '__main__':
