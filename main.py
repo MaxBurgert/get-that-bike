@@ -14,6 +14,7 @@ def main():
 
     urls = ast.literal_eval(os.environ.get("URLS"))
     for url in urls:
+        print(url)
         page = urllib.request.urlopen(url)
         logging.info(f'Page status code: {page.status}')
         if page.status != 200:
