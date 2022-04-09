@@ -39,3 +39,5 @@ jobs:
     - name: Run script
       run: |
         python main.py
+      env:
+        URLS: ${{ secrets.URLS }

@@ -1,11 +1,9 @@
+import ast
 import logging
+import os
 import urllib.request
 
 from bs4 import BeautifulSoup
-
-urls = list(['https://standert.de/collections/triebwerk-disc/products/triebwerk-disc-ltd-2022-frame?variant=42550256959701',
-           'https://standert.de/collections/triebwerk-disc/products/triebwerk-disc-ltd-2022?variant=42550325280981'])
-
 
 def main():
     # Setup logging
@@ -13,6 +11,8 @@ def main():
                         filemode='w', level=logging.INFO, encoding='utf-8')
 
     logging.info('-- Start Availability Check --')
+
+    urls = ast.literal_eval(os.environ.get("URLS"))
     for url in urls:
         page = urllib.request.urlopen(url)
         logging.info(f'Page status code: {page.status}')
