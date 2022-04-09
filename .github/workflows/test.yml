@@ -41,3 +41,11 @@ jobs:
         python main.py
       env:
         URLS: ${{ secrets.URLS }}
+    - name: Deploy
+      uses: exuanbo/actions-deploy-gist@v1.1.2
+      with:
+        token: ${{ secrets.GIST }}
+        gist_id: 8cbc717a8538036da5deb82a915c5a44
+        gist_description: "Get-That-Bike Log"
+        gist_file_name: example.log
+        file_path: ./example.log
